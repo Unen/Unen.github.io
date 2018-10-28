@@ -19,15 +19,17 @@ NickName: 'unen'
 webtitle: '宇能'
 bio: 'unen.github.io'
 about: true
-aboutyou: '宇能改变世界能源结构'
+aboutyou: '宇能,改变世界能源结构'
 portraits: '/assets/profile.png' # your portraits image file path
 
 # SNS
 SNS: true
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
   mail: 'mailto:18976641201@163.com'
-  weixin: 'https://i.loli.net/2018/10/28/5bd5882b1d808.png' # 你的微信二维码存放的地址
-  qq: 'https://i.loli.net/2018/10/28/5bd5882b1398a.png' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  # weixin: 'https://i.loli.net/2018/10/28/5bd5882b1398a.png' # 你的微信二维码存放的地址
+  weixin: '/screenshot/SNS/Wechat.png' # 你的微信二维码存放的地址
+  # qq: 'https://i.loli.net/2018/10/28/5bd5882b1d808.png' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  qq: '/screenshot/SNS/QQ.png' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: 'https://github.com/unen'
   # Codepen: ''
   # weibo: ''
