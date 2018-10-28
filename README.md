@@ -1,152 +1,176 @@
-# Simple Texture Jekyll Theme
+# HANUMAN Jekyll Theme
 
-![Gem Version](https://img.shields.io/gem/v/jekyll-theme-simple-texture.svg)
+[![Build Status](https://travis-ci.org/samanyougarg/hanuman.svg?branch=master)](https://travis-ci.org/samanyougarg/hanuman)
 
-Simple Texture is a gem-based responsive simple texture styled Jekyll theme for [Jekyll][Jekyll] 3.3 or above,
-which can also be forked as a boilerplate for older versions of Jekyll.
+Hanuman is a minimal yet powerful Jekyll theme for your blogs and websites.
 
-## Demo
+It is built using the open source [AMP Start framework](https://www.ampstart.com/) and can be customized as per your requirements.
 
-- Starter-kit demo:
-<https://yizeng.github.io/jekyll-theme-simple-texture/>
-- My own personal blog: <https://yizeng.me/blog>
+<a href="https://www.buymeacoffee.com/samanyougarg"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" target="_blank"></a>
 
-![Screenshot - Home](assets/images/screenshots/home.png)
+## Live Demo
+## [Hanuman](https://samanyougarg.com/hanuman)
+![Hanuman](/Screenshots/hanuman.jpg "Hanuman Preview")
 
-![Screenshot - Blog](assets/images/screenshots/post.png)
+
+## Features
+
+- Minimal
+- Responsive
+- Syntax Highlighting for code
+- Cover Images for homepage and blog posts
+- Social Sharing
+- Simple Navigation Menu
+- Pagination
+- Google Analytics
+- Can be easily installed via "theme gem"
+- Github Pages support
+- Easily Customisable
+- Tags
+- Multiple Authors
+
+## What is AMP
+
+AMP stands for [Accelerated Mobile Pages](https://www.ampproject.org/), a Google-backed project designed as an open standard for any publisher to have pages load quickly on mobile devices.
 
 ## Installation
 
-### As a Jekyll theme gem (Jekyll >= 3.3)
+There are different ways to install the theme -
 
-If you are creating a new website or blog,
-please follow the commands below first:
+### 1. Cloning the repository and updating settings
+1. Fork this repository and clone the forked repository.
+2. Update the _config.yml file as per your requirements.
+3. Add your posts to the _posts directory.
+4. Deploy to Github Pages or your own server.
 
-1. Install Jekyll and [Bundler][Bundler]
+#### Deploying to Github Pages
+**Method 1**
 
-       gem install jekyll bundler
+Push the contents of the destination folder (mentioned in _config.yml. eg - destination: ../hanuman-pages/) to the gh-pages branch(if project page) or master branch(if user page) of your repository.
 
-2. Create a new Jekyll app
+**Method 2**
 
-       jekyll new jekyllapp
+- Set up travis-ci for your fork.
+- Generate your secure token with the travis gem:
+  Run `gem install travis` on your terminal.
+- Grab the GH_TOKEN from https://github.com/settings/tokens
+- Then run `travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'`
+- Add the token to your .travis.yml file.
+Now you just need to push the files. Travis will generate the HTML files and automatically push them to your gh-pages branch.
+This is the setup I am using.
 
-3. Enter the new directory
+### 2. Ruby Gem Method
+Add this line to your Jekyll site's `Gemfile`:
 
-       cd jekyllapp
+```ruby
+gem "hanuman"
+```
 
-4. Then follow the instructions below like existing Jekyll app.
+And add this line to your Jekyll site's `_config.yml`:
 
-Then for existing Jekyll apps,
+```yaml
+theme: hanuman
+```
 
-1. Install Bundler if haven't done so.
+And then execute:
 
-       gem install bundler
+    $ bundle
 
-1. Remove Jekyll auto-generated default pages `404.html`, `about.md` and `index.md` or any your custom layouts or existing theme files.
+Or install it yourself as:
 
-1. Remove the existing `Gemfile.lock`.
+    $ gem install hanuman
 
-1. Download the respository [here](https://github.com/yizeng/jekyll-theme-simple-texture/archive/master.zip)
-and locate `starter-kit` folder,
-or download `starter-kit` folder directly [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/yizeng/jekyll-theme-simple-texture/tree/master/starter-kit).
+You'll also need to copy or create the _config.yml file just like in this repository. Similarly, you'll need to have a navigation.yml and author.yml in your _data directory.
 
-1. Put everything in the `starter-kit` in the root directory,
-i.e. `jekyllapp` in this example.
+#### Deploying to Github Pages
+Run `bundle exec jekyll serve` inside your cloned repository. Push the contents of the resulting _site to your Github Pages repository.
 
-1. Run `bundle install` to install dependencies.
 
-1. Run Jekyll with `bundle exec jekyll serve`
+### 3. Jekyll Remote Theme
+1. Create or update your Gemfile with the following -
 
-1. Hack away at <http://localhost:4000>!
+```ruby
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-remote-theme"
+```
 
-### As a fork
+2. Update the bundled gems using `bundle` command.
 
-1. Fork the repo [here](https://github.com/yizeng/jekyll-theme-simple-texture#fork-destination-box)
+3. Add `remote_theme: "hanuman"` to your `_config.yml`.
 
-2. Clone the repo just forked.
+4. Add `jekyll-remote-theme` to the plugins array of your `_config.yml` -
 
-       git clone git@github.com:[YOUR_USERNAME]/jekyll-theme-simple-texture.git
+```yaml
+plugins:
+  - jekyll-remote-theme
+```
 
-3. Delete `starter-kit` folder and `jekyll-theme-simple-texture.gemspec` file (they're for people installing via gem)
+## Usage
 
-4. Install Bundler if haven't done so.
+### _config.yml
+Update _config.yml with your respective settings like updating your site's name, description etc...
 
-       gem install bundler
+### Styling
+AMP has a limitation that you can only use inline css.
+All the CSS for this theme is in the styles.scss file in the includes directory.
 
-5. Update the `Gemfile` to look like the following:
+#### Changing the Default Color
+In the styles.scss file in the includes directory, you can change the hex value of $theme-color to the color you would like your site to use.
 
-   ```ruby
-   source "https://rubygems.org"
+### Author Information
+Author information is present in the author.yml file in the _data folder. You can update the fields of that file as per your requirements.
 
-   gem "github-pages", group: :jekyll_plugins
-   ```
+### Sidenav
+Sidenav can be updated from the navigation.yml file in the _data folder.
 
-6. Run `bundle install` to install dependencies.
+## Writing Posts
+You can write posts just as you would in Jekyll, the only difference being that AMP has some strict guidelines on including external content.
 
-7. Run Jekyll with `bundle exec jekyll serve`
+You cannot use Markdown format or normal HTML tags. AMP provides its own custom tags for images, videos etc...
 
-8. Hack away at <http://localhost:4000>!
+### Examples -
+
+**Images**
+`<amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>`
+
+**Videos**
+`<amp-youtube data-videoid="mGENRKrdoGY" layout="responsive" width="480" height="270"></amp-youtube>`
+
+[See Full AMP Documentation.](https://www.ampproject.org/docs/)
+
+### Using AMP Components
+Some AMP components require you to specify external scripts before using them.
+You can specify these scripts in the head.html file in the includes directory after the already imported scripts and then use these components in any post.
+
+## Validating your page with AMP
+AMP provides built-in validator to validate your pages so that they can rendered quickly.
+
+You can access this validator by opening the Developer Console in your browser and adding #development=1 to any url of your site.
+
+Example -
+http://localhost:4000/#development=1
+
+If you have errors on your page, AMP will list those for you in the console. If you do not have any errors, you'll get a message "AMP Validation Successful" on your console.
+
+## Enabling Google Analytics
+1. Set up your Analytics Tracking ID in _config.yml.
+2. Remove {% comment %} and {% endcomment %} tags in the default.html file in layouts directory.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at <https://github.com/yizeng/jekyll-theme-simple-texture>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/samanyougarg/hanuman. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## Credits
+To submit a pull request -
 
-- [Jekyll][Jekyll]
-  + [jekyll-feed](https://github.com/jekyll/jekyll-feed)
-  + [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from)
-  + [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
-  + [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
-  + [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
-  + [Jekyll-Bootstrap](http://jekyllbootstrap.com/)
-  + [theme-the-program](https://github.com/jekyllbootstrap/theme-the-program)
+1. Fork/clone the repository.
+2. Develop.
+3. Create a new branch from the master branch.
+4. Open a pull request on Github describing what was fixed or added.
 
-- [Sass](http://sass-lang.com/)
-  + [Normalize.css](https://necolas.github.io/normalize.css/)
-  + [Animate.css](https://daneden.github.io/animate.css/)
-  + [Simple Icons](https://simpleicons.org/)
-  + [Noise Texture Generator](http://www.noisetexturegenerator.com/)
-- JavaScript
-  + [cdnjs](https://cdnjs.com/)
-  + [jQuery](https://jquery.com/)
-  + [fullPage.js](https://alvarotrigo.com/fullPage/)
-  + [pace.js](http://github.hubspot.com/pace/docs/welcome/)
-  + [Modernizr](https://modernizr.com/)
-  + [FancyBox](http://fancybox.net/)
-  + [unveil.js](http://luis-almeida.github.io/unveil/)
-- Fonts
-  + [Font Squirrel](https://www.fontsquirrel.com/)
-  + [Bitter](https://fonts.google.com/specimen/Bitter)
-  + [Junge](https://fonts.google.com/specimen/Junge)
-  + [Ubuntu Condensed](https://fonts.google.com/specimen/Ubuntu+Condensed)
+## Thanks
+Hanuman is based on [amplify](https://github.com/ageitgey/amplify) jekyll theme. Thank You.
 
 ## License
 
-The theme is available as open source under the terms of the
-[MIT License](https://github.com/yizeng/jekyll-theme-simple-texture/blob/master/LICENSE).
-
-    MIT License
-
-    Copyright (c) 2017 Yi Zeng
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-
-[Jekyll]: http://jekyllrb.com/
-[Bundler]: https://bundler.io/
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
