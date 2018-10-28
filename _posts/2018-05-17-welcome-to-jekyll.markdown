@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2018-05-17 14:05:21 +0800
-tags: jekyll update html
+tags: jekyll update html 小程序 
 color: rgb(255,90,90)
 cover: '../assets/test.png'
 subtitle: 'Welcome to Jekyll!'
