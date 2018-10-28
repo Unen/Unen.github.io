@@ -14,13 +14,13 @@ nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
 
 # 博主
 author: true
-name: 'your awesome name'
-NickName: 'your awesome nickname'
-webtitle: 'your awesome webtitle'
-bio: 'your awesome bio'
+name: '宇能'
+NickName: 'unen'
+webtitle: '宇能'
+bio: 'unen.github.io'
 about: true
-aboutyou: 'your introduction'
-portraits: '/assets/profile.jpeg' # your portraits image file path
+aboutyou: '宇能改变世界能源结构'
+portraits: '/assets/profile.png' # your portraits image file path
 
 # SNS
 SNS: true
